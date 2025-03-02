@@ -1,12 +1,20 @@
-{
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+{  // Store in ".devcontainer/devcontainer.json"; use the "Preview in Editor" button in the ports control to view; password is "vscode"
+  "name": "with VNC Desktop",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": ". setup.sh",
   "features": {
     "ghcr.io/devcontainers/features/desktop-lite:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": []
+    }
   },
   "forwardPorts": [6080],
   "portsAttributes": {
     "6080": {
       "label": "desktop"
     }
-  }
+  },
+  "remoteUser": "vscode"
 }
